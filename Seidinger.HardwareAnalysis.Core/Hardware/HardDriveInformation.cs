@@ -15,8 +15,8 @@ namespace Seidinger.HardwareAnalysis.Core.Hardware
         public void RetrieveHardwareInformation()
         {
             DriveInfo mainDriveInfo = DriveInfo.GetDrives().Single(x => x.Name == MAIN_DRIVE_NAME);
-            var percentageUsed = ((decimal)mainDriveInfo.AvailableFreeSpace / mainDriveInfo.TotalSize) * 100;
-            this.HardDriveUsage = 100 - (int)percentageUsed;
+            var percentageOfSpaceFree = ((decimal)mainDriveInfo.AvailableFreeSpace / mainDriveInfo.TotalSize) * 100;
+            this.HardDriveUsage = 100 - (int)percentageOfSpaceFree;
         }
     }
 }
